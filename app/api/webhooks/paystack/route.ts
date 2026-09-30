@@ -54,6 +54,8 @@ export async function POST(request: Request) {
     const { reference, status: paymentStatus, amount: paidAmountInPesewas, metadata: rawMetadata } = payload.data;
     const paidAmount = paidAmountInPesewas ? (paidAmountInPesewas / 100) - (0.02 * (paidAmountInPesewas / 100)) : 0; 
 
+  console.log("metadata amount", payload.data)
+
     if (paymentStatus !== "success") { 
       console.log(`Paystack Webhook: Payment status is ${paymentStatus}. Skipping.`);
       return NextResponse.json({ message: `Payment status is ${paymentStatus}` }, { status: 200 });
@@ -198,7 +200,7 @@ export async function POST(request: Request) {
       const profit = customPrice - basePrice;
       const network = bundle.network;
 
-      if (paidAmount !== customPrice) {
+      if (paidAmount < customPrice) {
         console.log(`Paystack Webhook: Invalid amount for reference ${reference}. Amount ${paidAmount} is less than bundle price ${bundle?.price}`);
         await SystemLog.create({
           level: "error",
