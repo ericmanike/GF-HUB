@@ -51,10 +51,10 @@ export async function POST(request: Request) {
       return NextResponse.json({ message: `Ignored event: ${payload.event}` }, { status: 200 });
     }
 
-    const { reference, status: paymentStatus, amount: paidAmountInPesewas, metadata: rawMetadata } = payload.data;
-    const paidAmount = paidAmountInPesewas ? (paidAmountInPesewas / 100) - (0.02 * (paidAmountInPesewas / 100)) : 0; 
-
-  console.log("metadata amount", payload.data)
+    const { reference, status: paymentStatus, amount: paidAmountInPesewas, fees: feesInPesewas, metadata: rawMetadata } = payload.data;
+    const paidAmount = paidAmountInPesewas ? paidAmountInPesewas / 100 : 0; // Gross amount paid by customer (e.g. 9.17)
+    const paystackFee = feesInPesewas ? feesInPesewas / 100 : 0;           // Paystack fee (e.g. 0.18)
+    const netAmount = paidAmount - paystackFee;                            // Net received in Paystack balance (e.g. 8.99)
 
     if (paymentStatus !== "success") { 
       console.log(`Paystack Webhook: Payment status is ${paymentStatus}. Skipping.`);
@@ -200,13 +200,13 @@ export async function POST(request: Request) {
       const profit = customPrice - basePrice;
       const network = bundle.network;
 
-      if (paidAmount < customPrice) {
-        console.log(`Paystack Webhook: Invalid amount for reference ${reference}. Amount ${paidAmount} is less than bundle price ${bundle?.price}`);
+      if (paidAmount < customPrice ) {
+        console.log(`Paystack Webhook: Invalid amount for reference ${reference}. Paid amount ${paidAmount} is less than custom price ${customPrice}`);
         await SystemLog.create({
           level: "error",
           category: "webhook",
-          message: `Paystack Webhook: Invalid amount for reference ${reference}. Amount ${paidAmount} is less than bundle price ${bundle?.price}`,
-          meta: { reference, paidAmount, bundlePrice: bundle?.price },
+          message: `Paystack Webhook: Invalid amount for reference ${reference}. Paid amount ${paidAmount} is less than custom price ${customPrice}`,
+          meta: { reference, paidAmount, customPrice },
         });
         return NextResponse.json({ message: "Invalid amount" }, { status: 400 });
       }
