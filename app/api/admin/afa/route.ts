@@ -46,7 +46,7 @@ export async function PATCH(req: Request) {
     const updatedOrder = await Order.findByIdAndUpdate(
       id,
       { status },
-      { new: true, runValidators: true }
+      { returnDocument: 'after', runValidators: true }
     ).populate("user", "name email phone");
 
     if (!updatedOrder) {
@@ -78,7 +78,7 @@ export async function PUT(req: Request) {
     const setting = await Setting.findOneAndUpdate(
       { key: "afaRegistrationPrice" },
       { value: Number(price) },
-      { upsert: true, new: true }
+      { upsert: true, returnDocument: 'after' }
     );
 
     return NextResponse.json({ price: Number(setting.value) });

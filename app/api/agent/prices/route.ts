@@ -131,7 +131,7 @@ export async function POST(req: Request) {
           customPrice: numericCustomPrice,
           isActive: isActive !== undefined ? isActive : true,
         },
-        { upsert: true, new: true }
+        { upsert: true, returnDocument: 'after' }
       );
     }
 

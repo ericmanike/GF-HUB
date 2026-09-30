@@ -33,7 +33,7 @@ export async function PATCH(
     }
 
     const updatedBundle = await Bundle.findByIdAndUpdate(id, body, {
-      new: true,
+      returnDocument: 'after',
       runValidators: true,
     });
 

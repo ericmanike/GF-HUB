@@ -68,7 +68,7 @@ export async function PATCH(req: Request) {
     if (message !== undefined) updateData.message = message;
     if (isActive !== undefined) updateData.isActive = isActive;
 
-    const notification = await Notification.findByIdAndUpdate(id, updateData, { new: true });
+    const notification = await Notification.findByIdAndUpdate(id, updateData, { returnDocument: 'after' });
     if (!notification) {
       return NextResponse.json({ error: "Notification not found" }, { status: 404 });
     }

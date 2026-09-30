@@ -43,7 +43,7 @@ export async function PATCH(req: Request) {
     const updatedOrder = await Order.findByIdAndUpdate(
       id,
       { status },
-      { new: true, runValidators: true }
+      { returnDocument: 'after', runValidators: true }
     ).populate("user", "name email phone");
 
     if (!updatedOrder) {

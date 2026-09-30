@@ -46,7 +46,7 @@ export async function PATCH(req: Request) {
     const setting = await Setting.findOneAndUpdate(
       { key: "ordersClosed" },
       { value: ordersClosed },
-      { upsert: true, new: true }
+      { upsert: true, returnDocument: 'after' }
     );
 
     return NextResponse.json({ ordersClosed: Boolean(setting.value) });
@@ -75,7 +75,7 @@ export async function POST(req: Request) {
     const setting = await Setting.findOneAndUpdate(
       { key: "provider" },
       { value: provider, provider },
-      { upsert: true, new: true }
+      { upsert: true, returnDocument: 'after' }
     );
 
     return NextResponse.json({ provider: String(setting.value) });
