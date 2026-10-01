@@ -92,17 +92,18 @@ export async function POST(request: Request) {
        const bundle = await Bundle.findOne({
         network: network,
         name: bundleName,
-        amount:price,
         isActive: true
-       })
+       });
 
-      if (paidAmount !== bundle?.price!) {
-        console.log(`Paystack Webhook: Invalid amount for reference ${reference}. Amount ${paidAmount} is less than bundle price ${bundle?.price}`);
+      const expectedPrice = bundle?.price || price;
+
+      if (paidAmount < expectedPrice) {
+        console.log(`Paystack Webhook: Invalid amount for reference ${reference}. Paid amount ${paidAmount} is less than bundle price ${expectedPrice}`);
         await SystemLog.create({
           level: "error",
           category: "webhook",
-          message: `Paystack Webhook: Invalid amount for reference ${reference}. Amount ${paidAmount} is less than bundle price ${bundle?.price}`,
-          meta: { reference, paidAmount, bundlePrice: bundle?.price },
+          message: `Paystack Webhook: Invalid amount for reference ${reference}. Paid amount ${paidAmount} is less than bundle price ${expectedPrice}`,
+          meta: { reference, paidAmount, bundlePrice: expectedPrice },
         });
         return NextResponse.json({ message: "Invalid amount" }, { status: 400 });
       }
@@ -200,7 +201,7 @@ export async function POST(request: Request) {
       const profit = customPrice - basePrice;
       const network = bundle.network;
 
-      if (paidAmount < customPrice ) {
+      if (paidAmount < customPrice) {
         console.log(`Paystack Webhook: Invalid amount for reference ${reference}. Paid amount ${paidAmount} is less than custom price ${customPrice}`);
         await SystemLog.create({
           level: "error",
