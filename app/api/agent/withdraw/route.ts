@@ -24,6 +24,13 @@ export async function POST(req: Request) {
 
     await dbConnect();
 
+    if (valAmount < 50){ 
+      return NextResponse.json(
+        { error: "Withdrawal amount must be at least GH₵ 50" },
+        { status: 400 }
+      );
+    }
+
     // Retrieve agent profile
     const user = await User.findById((session.user as any).id);
     if (!user) {
