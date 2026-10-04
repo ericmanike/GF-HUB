@@ -56,7 +56,7 @@ export async function handleDataBundlesHub(order: any, data: any, apiKey: string
   const result = await res.json();
 
   if (result.success && result.data) {
-    order.transaction_id = "nexa-" + result.data.purchaseId;
+    order.transaction_id = "gf-" + result.data.purchaseId;
     order.status = "processing";
     await order.save();
   }

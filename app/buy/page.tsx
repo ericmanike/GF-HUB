@@ -131,7 +131,7 @@ export default function BuyPage() {
       };
       const network = networkMap[activeCarrier] || "MTN";
       const bundleName = buyBundle.name;
-      const guestEmail = `${buyPhoneNumber}@nexabundles.com`;
+      const guestEmail = `${buyPhoneNumber}@gfdatahub.com`;
 
       // Calculate total price with 2% tax rounded to 2 decimal places, then convert to GHS cents
       const tax = 0.02 * mappedPrice;

@@ -76,7 +76,7 @@ export async function POST(request: Request) {
     user.walletBalance -= AFA_REGISTRATION_PRICE;
     await user.save();
 
-    const newTxId = `NEXA-AFA-${Math.floor(100000 + Math.random() * 900000)}`;
+    const newTxId = `GF-AFA-${Math.floor(100000 + Math.random() * 900000)}`;
 
     // Create Order
     const order = await Order.create({

@@ -50,7 +50,7 @@ async function processOrderCheck(request: Request) {
 
         // Clean reference for DataBundlesHub
         const rawRef = order.transaction_id || order.payment_id;
-        const reference = rawRef?.trim() ? rawRef.trim().replace(/^nexa-/, "") : "";
+        const reference = rawRef?.trim() ? rawRef.trim().replace(/^(gf|nexa)-/, "") : "";
 
         if (!reference) continue;
 

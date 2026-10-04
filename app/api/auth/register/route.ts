@@ -49,7 +49,7 @@ export async function POST(req: Request) {
         let referralCode = "";
         let isUnique = false;
         while (!isUnique) {
-            referralCode = "NEXA-" + Math.random().toString(36).substring(2, 8).toUpperCase();
+            referralCode = "GF-" + Math.random().toString(36).substring(2, 8).toUpperCase();
             const existing = await User.findOne({ referralCode });
             if (!existing) {
                 isUnique = true;
