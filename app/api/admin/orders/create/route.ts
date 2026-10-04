@@ -5,7 +5,7 @@ import dbConnect from "@/lib/mongoose";
 import Order from "@/models/Order";
 import Bundle from "@/models/Bundle";
 import Setting from "@/models/Setting";
-import { handleTopily, handleAgentPortal, handleDataBundlesHub } from "@/components/providers/apiProviders";
+import { handleDataBundlesHub, handleDakazina } from "@/components/providers/apiProviders";
 
 // POST /api/admin/orders/create - Manually create an order (Admin only)
 export async function POST(req: Request) {
@@ -50,11 +50,10 @@ export async function POST(req: Request) {
     });
 
     const providerDoc = await Setting.findOne({ key: "provider" });
-    const provider = providerDoc?.value || "agentportal";
+    const provider = providerDoc?.value || "dakazina";
 
-    const TOPPILY_API_KEY = process.env.TOPPILY_API_KEY!;
-    const AGENT_PORTAL_API_KEY = process.env.AGENT_PORTAL_API_KEY!;
     const DATABUNDLEHUB_API_KEY = process.env.DATABUNDLEHUB_API_KEY!;
+    const DAKAZINA_API_KEY = process.env.DAKAZINA_API_KEY!;
 
     const data = {
       network,
@@ -66,12 +65,10 @@ export async function POST(req: Request) {
 
     let response;
     try {
-      if (provider === "databundlehub") {
+      if (provider === "dakazina") {
+        response = await handleDakazina(order, data, DAKAZINA_API_KEY);
+      } else if (provider === "databundlehub") {
         response = await handleDataBundlesHub(order, data, DATABUNDLEHUB_API_KEY);
-      } else if (provider === "toppily") {
-        response = await handleTopily(order, data, TOPPILY_API_KEY);
-      } else if (provider === "agentportal") {
-        response = await handleAgentPortal(order, data, AGENT_PORTAL_API_KEY);
       }
     } catch (err) {
       console.error("Manual order provider call error:", err);

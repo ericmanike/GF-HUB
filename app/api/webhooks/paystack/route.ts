@@ -8,7 +8,7 @@ import AgentStore from "@/models/AgentStore";
 import Bundle from "@/models/Bundle";
 import Transaction from "@/models/Transaction";
 import SystemLog from "@/models/SystemLog";
-import { handleAgentPortal, handleDataBundlesHub, handleTopily} from "@/components/providers/apiProviders";
+import { handleDataBundlesHub, handleDakazina } from "@/components/providers/apiProviders";
 import crypto from "crypto";
 import mongoose from "mongoose";
 
@@ -141,12 +141,11 @@ export async function POST(request: Request) {
       }
 
       // Call external provider to send data bundle
-      const AGENT_PORTAL_API_KEY = process.env.AGENT_PORTAL_API_KEY!;
       const DATABUNDLEHUB_API_KEY = process.env.DATABUNDLEHUB_API_KEY!;
-      const TOPPILY_API_KEY = process.env.TOPPILY_API_KEY!;
+      const DAKAZINA_API_KEY = process.env.DAKAZINA_API_KEY!;
 
       const providerDoc = await Setting.findOne({ key: "provider" });
-      const provider = providerDoc?.value || "agent_portal";
+      const provider = providerDoc?.value || "dakazina";
 
       const providerData = {
         network,
@@ -157,12 +156,10 @@ export async function POST(request: Request) {
       };
 
      let providerResponse;
-      if (provider === "agentportal" && AGENT_PORTAL_API_KEY) {
-        providerResponse = await handleAgentPortal(order, providerData, AGENT_PORTAL_API_KEY);
+      if (provider === "dakazina" && DAKAZINA_API_KEY) {
+        providerResponse = await handleDakazina(order, providerData, DAKAZINA_API_KEY);
       } else if (provider === "databundlehub" && DATABUNDLEHUB_API_KEY) {
         providerResponse = await handleDataBundlesHub(order, providerData, DATABUNDLEHUB_API_KEY);
-      } else if (provider === "toppily" && TOPPILY_API_KEY) {
-        providerResponse = await handleTopily(order, providerData, TOPPILY_API_KEY);
       }
 
       await SystemLog.create({
@@ -251,12 +248,11 @@ export async function POST(request: Request) {
       );
 
       // Call external provider to send data bundle
-      const AGENT_PORTAL_API_KEY = process.env.AGENT_PORTAL_API_KEY!;
       const DATABUNDLEHUB_API_KEY = process.env.DATABUNDLEHUB_API_KEY!;
-      const TOPPILY_API_KEY = process.env.TOPPILY_API_KEY!;
+      const DAKAZINA_API_KEY = process.env.DAKAZINA_API_KEY!;
 
       const providerDoc = await Setting.findOne({ key: "provider" });
-      const provider = providerDoc?.value || "agentportal";
+      const provider = providerDoc?.value || "dakazina";
 
       const providerData = {
         network,
@@ -267,12 +263,10 @@ export async function POST(request: Request) {
       };
 
       let providerResponse;
-      if (provider === "agentportal" && AGENT_PORTAL_API_KEY) {
-        providerResponse = await handleAgentPortal(order, providerData, AGENT_PORTAL_API_KEY);
+      if (provider === "dakazina" && DAKAZINA_API_KEY) {
+        providerResponse = await handleDakazina(order, providerData, DAKAZINA_API_KEY);
       } else if (provider === "databundlehub" && DATABUNDLEHUB_API_KEY) {
         providerResponse = await handleDataBundlesHub(order, providerData, DATABUNDLEHUB_API_KEY);
-      } else if (provider === "toppily" && TOPPILY_API_KEY) {
-        providerResponse = await handleTopily(order, providerData, TOPPILY_API_KEY);
       }
 
      

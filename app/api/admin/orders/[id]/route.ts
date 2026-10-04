@@ -5,7 +5,7 @@ import dbConnect from "@/lib/mongoose";
 import Order from "@/models/Order";
 import User from "@/models/User";
 import Setting from "@/models/Setting";
-import { handleTopily, handleAgentPortal, handleDataBundlesHub } from "@/components/providers/apiProviders";
+import { handleDataBundlesHub, handleDakazina } from "@/components/providers/apiProviders";
 
 // PATCH /api/admin/orders/[id] - Retry a failed order (Admin only)
 export async function PATCH(
@@ -37,11 +37,10 @@ export async function PATCH(
     await order.save();
 
     const providerDoc = await Setting.findOne({ key: "provider" });
-    const provider = providerDoc?.value || "agentportal";
+    const provider = providerDoc?.value || "dakazina";
 
-    const TOPPILY_API_KEY = process.env.TOPPILY_API_KEY!;
-    const AGENT_PORTAL_API_KEY = process.env.AGENT_PORTAL_API_KEY!;
     const DATABUNDLEHUB_API_KEY = process.env.DATABUNDLEHUB_API_KEY!;
+    const DAKAZINA_API_KEY = process.env.DAKAZINA_API_KEY!;
 
     const data = {
       network: order.network,
@@ -53,12 +52,10 @@ export async function PATCH(
 
     let response;
     try {
-      if (provider === "databundlehub") {
+      if (provider === "dakazina") {
+        response = await handleDakazina(order, data, DAKAZINA_API_KEY);
+      } else if (provider === "databundlehub") {
         response = await handleDataBundlesHub(order, data, DATABUNDLEHUB_API_KEY);
-      } else if (provider === "toppily") {
-        response = await handleTopily(order, data, TOPPILY_API_KEY);
-      } else if (provider === "agentportal") {
-        response = await handleAgentPortal(order, data, AGENT_PORTAL_API_KEY);
       }
     } catch (err) {
       console.error("Retry order provider call error:", err);

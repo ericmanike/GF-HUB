@@ -7,7 +7,7 @@ import Order from "@/models/Order";
 import Bundle from "@/models/Bundle";
 import Setting from "@/models/Setting";
 import Transaction from "@/models/Transaction";
-import { handleTopily, handleAgentPortal, handleDataBundlesHub } from "@/components/providers/apiProviders";
+import { handleDataBundlesHub, handleDakazina } from "@/components/providers/apiProviders";
 import { validateBody, buyDataSchema } from "@/lib/schemas";
 import { buyDataRateLimit } from "@/lib/ratelimit";
 
@@ -114,11 +114,10 @@ export async function POST(req: Request) {
 
     // Invoke API Provider
     const providerDoc = await Setting.findOne({ key: "provider" });
-    const provider = providerDoc?.value || "agentportal";
+    const provider = providerDoc?.value || "dakazina";
 
-    const TOPPILY_API_KEY = process.env.TOPPILY_API_KEY!;
-    const AGENT_PORTAL_API_KEY = process.env.AGENT_PORTAL_API_KEY!;
     const DATABUNDLEHUB_API_KEY = process.env.DATABUNDLEHUB_API_KEY!;
+    const DAKAZINA_API_KEY = process.env.DAKAZINA_API_KEY!;
 
     const providerData = {
       network,
@@ -130,12 +129,10 @@ export async function POST(req: Request) {
 
     let response;
     try {
-      if (provider === "databundlehub") {
+      if (provider === "dakazina") {
+        response = await handleDakazina(order, providerData, DAKAZINA_API_KEY);
+      } else if (provider === "databundlehub") {
         response = await handleDataBundlesHub(order, providerData, DATABUNDLEHUB_API_KEY);
-      } else if (provider === "toppily") {
-        response = await handleTopily(order, providerData, TOPPILY_API_KEY);
-      } else if (provider === "agentportal") {
-        response = await handleAgentPortal(order, providerData, AGENT_PORTAL_API_KEY);
       }
       console.log("Provider Response:  ",response)
     } catch (err) {

@@ -19,10 +19,7 @@ export default function AdminOrdersPage() {
   const [orderSearchQuery, setOrderSearchQuery] = useState("");
   const [processingId, setProcessingId] = useState<string | null>(null);
   const [stats, setStats] = useState({ users: 0, orders: 0, sales: 0 });
-  const [dakaziStats, setDakaziStats] = useState({
-    toppilyBalance: null as any,
-    agentPortalBalance: null as any,
-  });
+
   const [ordersClosed, setOrdersClosed] = useState(false);
   const [ordersClosedUpdating, setOrdersClosedUpdating] = useState(false);
   const [selectedProvider, setSelectedProvider] = useState("dakazina");
@@ -35,17 +32,15 @@ export default function AdminOrdersPage() {
   useEffect(() => {
     const fetchEverything = async () => {
       try {
-        const [ordersRes, statsRes, dakaziRes, ordersClosedRes, bundlesRes] = await Promise.all([
+        const [ordersRes, statsRes, ordersClosedRes, bundlesRes] = await Promise.all([
           fetch("/api/admin/orders"),
           fetch("/api/admin/stats"),
-          fetch("/api/testingDakazi"),
           fetch("/api/admin/settings/orders-closed"),
           fetch("/api/bundles"),
         ]);
 
         if (ordersRes.ok) setOrders(await ordersRes.json());
         if (statsRes.ok) setStats(await statsRes.json());
-        if (dakaziRes.ok) setDakaziStats(await dakaziRes.json());
         if (ordersClosedRes.ok) {
           const data = await ordersClosedRes.json();
           setOrdersClosed(Boolean(data?.ordersClosed));
@@ -241,36 +236,8 @@ export default function AdminOrdersPage() {
       </div>
 
       {/* Stats Grid */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 ">
-        <Card className="border-zinc-200 hover:border-green-400 transition-colors bg-white flex flex-col h-full py-3">
-          <CardContent className="p-4 flex flex-col justify-between flex-1">
-            <div className="flex items-center gap-2 mb-2">
-              <div className="p-2 bg-green-100 text-green-600 rounded-lg">
-                <CreditCard size={16} />
-              </div>
-              <p className="text-zinc-500 text-xs font-medium">Account Balances</p>
-            </div>
-            <div className="space-y-1.5">
-              <div className="flex items-center justify-between">
-                <span className="text-[11px] font-medium text-zinc-500">Toppily</span>
-                <span className="text-xs font-bold text-zinc-900">
-                  {dakaziStats.toppilyBalance?.balance != null
-                    ? formatCurrency(dakaziStats.toppilyBalance.balance)
-                    : "—"}
-                </span>
-              </div>
-              <div className="border-t border-zinc-100" />
-              <div className="flex items-center justify-between">
-                <span className="text-[11px] font-medium text-zinc-500">Agent Portal</span>
-                <span className="text-xs font-bold text-zinc-900">
-                  {dakaziStats.agentPortalBalance?.balance != null
-                    ? formatCurrency(dakaziStats.agentPortalBalance.balance)
-                    : "—"}
-                </span>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+
 
         <Card className="border-zinc-200 hover:border-green-400 transition-colors bg-white flex flex-col h-full py-3">
           <CardContent className="p-4 flex flex-col justify-between flex-1">
@@ -320,10 +287,9 @@ export default function AdminOrdersPage() {
               <span className="text-xs text-zinc-400 animate-pulse">Saving...</span>
             )}
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <div className="grid grid-cols-2 gap-3">
             {[
-              { value: "agentportal", label: "Agent Portal" },
-              { value: "toppily", label: "Toppily" },
+              { value: "dakazina", label: "Dakazina" },
               { value: "databundlehub", label: "Databundlehub" }
             ].map((provider) => ( 
               <label

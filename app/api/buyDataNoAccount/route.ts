@@ -4,7 +4,7 @@ import { authOptions } from "@/lib/auth";
 import dbConnect from "@/lib/mongoose";
 import Order from "@/models/Order";
 import Setting from "@/models/Setting";
-import {handleTopily, handleAgentPortal,handleDataBundlesHub } from "@/components/providers/apiProviders";
+import { handleDataBundlesHub, handleDakazina } from "@/components/providers/apiProviders";
 import { createOrder } from "@/lib/orderService";
 import Transaction from "@/models/Transaction";
 import { validateBody, buyDataNoAccountSchema } from "@/lib/schemas";
@@ -113,25 +113,17 @@ export async function POST(req: Request) {
     }
 
 
-    
-    const TOPPILY_API_KEY = process.env.TOPPILY_API_KEY!;
-    const AGENT_PORTAL_API_KEY = process.env.AGENT_PORTAL_API_KEY!;
-    const DATABUNDLEHUB_API_KEY = process.env.DATABUNDLEHUB_API_KEY!;
-
-    if (!TOPPILY_API_KEY || !AGENT_PORTAL_API_KEY ) {
-      return NextResponse.json({ message: "unexpected error occurred" }, { status: 500 });
-    }
     const data = {
       network,
       bundleName,
       price,
       phoneNumber,
       reference,
-    }
+    };
     
     const order = await createOrder(session, data);
 
-    if(session?.user?.id){
+    if (session?.user?.id) {
         await Transaction.create({
             user: session?.user?.id,  
             transactionType: 'debit',
@@ -142,21 +134,19 @@ export async function POST(req: Request) {
             status: 'success'
         });
     }
-    
 
-
+    const DATABUNDLEHUB_API_KEY = process.env.DATABUNDLEHUB_API_KEY!;
+    const DAKAZINA_API_KEY = process.env.DAKAZINA_API_KEY!;
 
     const providerDoc = await Setting.findOne({ key: "provider" });
-    const provider = providerDoc?.value || "agentportal";
+    const provider = providerDoc?.value || "dakazina";
 
     let response;
 
-    if (provider === "databundlehub") {
+    if (provider === "dakazina") {
+      response = await handleDakazina(order, data, DAKAZINA_API_KEY);
+    } else if (provider === "databundlehub") {
       response = await handleDataBundlesHub(order, data, DATABUNDLEHUB_API_KEY);
-    }else if (provider === "toppily") {
-      response = await handleTopily(order, data, TOPPILY_API_KEY);
-    } else if (provider === "agentportal") {
-      response = await handleAgentPortal(order, data, AGENT_PORTAL_API_KEY);
     }
 
     
