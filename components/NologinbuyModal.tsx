@@ -62,16 +62,16 @@ export default function PurchaseBundleModal({
     }
   > = {
     MTN: {
-      headerBg: "bg-[#1e3a8a]",
+      headerBg: "bg-[#059669]",
       headerText: "text-white",
       iconBg: "bg-white/10 text-white",
       closeBtnHover: "hover:bg-slate-900/20",
-      summaryBg: "bg-[#feb400]/5",
-      summaryBorder: "border-[#feb400]/20",
-      summaryText: "text-amber-950",
-      payBtnBg: "bg-[#feb400]",
-      payBtnHover: "hover:bg-[#e6a200]",
-      payBtnText: "text-slate-900",
+      summaryBg: "bg-[#059669]/5",
+      summaryBorder: "border-[#059669]/20",
+      summaryText: "text-emerald-950",
+      payBtnBg: "bg-[#059669]",
+      payBtnHover: "hover:bg-[#047857]",
+      payBtnText: "text-white",
     },
     AirtelTigo: {
       headerBg: "bg-[#0066b3]",

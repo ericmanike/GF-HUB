@@ -327,15 +327,15 @@ export default function SignUpPage() {
             </div>
           )}
 
-        {/* Yellow Submit CTA (Vibrant Gold from Screenshot) */}
+        {/* Submit CTA */}
         <button
         type="submit" 
-         
+          
           disabled={isLoading || !name || !phone || !email || !password || password.length < 8 || !/[a-z]/.test(password) || !/[A-Z]/.test(password) || !/[0-9]/.test(password)}
-          className="relative flex w-full items-center justify-center gap-1.5 rounded-xl bg-[#fbcb08] hover:bg-[#eab308] py-3.5 px-4 text-sm font-bold text-slate-900 shadow-sm transition-all duration-200 cursor-pointer select-none active:scale-[0.99] disabled:opacity-40 disabled:pointer-events-none"
+          className="relative flex w-full items-center justify-center gap-1.5 rounded-xl bg-[#06b6d4] hover:bg-[#0891b2] py-3.5 px-4 text-sm font-bold text-white shadow-sm transition-all duration-200 cursor-pointer select-none active:scale-[0.99] disabled:opacity-40 disabled:pointer-events-none"
         >
           {isLoading ? (
-            <Loader2 className="h-5 w-5 animate-spin text-slate-900" />
+            <Loader2 className="h-5 w-5 animate-spin text-white" />
           ) : (
             <>
               Create Account
@@ -345,12 +345,12 @@ export default function SignUpPage() {
         </button>
       </form>
 
-      {/* Footer Switch Page link (Orange/Amber text color matching Datamart design) */}
+      {/* Footer Switch Page link */}
       <p className="mt-6 text-center text-[13px] font-medium text-slate-500">
         Already have an account?{" "}
         <Link
           href="/auth/signIn"
-          className="font-bold text-[#fb923c] hover:text-[#f97316] transition-colors"
+          className="font-bold text-[#06b6d4] hover:text-[#0891b2] transition-colors"
         >
           Sign In
         </Link>

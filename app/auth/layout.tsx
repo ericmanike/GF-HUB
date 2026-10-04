@@ -1,11 +1,11 @@
 import React from "react";
 import Link from "next/link";
-import { RadioTower, ArrowRight, HelpCircle } from "lucide-react";
+import { GlobeCheck, ArrowRight, HelpCircle } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Authentication",
-  description: "Sign in or create a free account with Nexa Bundles. Start your mobile data agent business or buy bundles directly.",
+  description: "Sign in or create a free account with GF Data Hub. Start your mobile data agent business or buy bundles directly.",
 };
 
 interface AuthLayoutProps {
@@ -19,12 +19,12 @@ export default function AuthLayout({ children }: AuthLayoutProps) {
       {/* 1. Header (Logo & Subtitle) */}
       <div className="mb-6 flex flex-col items-center text-center">
         <Link href="/" className="inline-flex items-center gap-2.5 group mb-1.5">
-          <div className="h-9 w-9 rounded-xl bg-[#1e3a8a] flex items-center justify-center shadow-md shadow-[#1e3a8a]/20 group-hover:scale-105 transition-transform">
-            <RadioTower className="h-5.5 w-5.5 text-white" />
+          <div className="h-9 w-9 rounded-xl bg-[#059669] flex items-center justify-center shadow-md shadow-[#059669]/20 group-hover:scale-105 transition-transform">
+            <GlobeCheck className="h-5.5 w-5.5 text-white" />
           </div>
           <span className="text-[27px] font-extrabold flex items-baseline leading-none">
-            <span className="text-[#1e3a8a]">Nexa</span>
-            <span className="text-[#fb923c] ml-1">Bundles</span> 
+            <span className="text-[#059669]">GF Data</span>
+            <span className="text-[#06b6d4] ml-1">Hub</span> 
           </span>
         </Link>
        
@@ -63,7 +63,7 @@ export default function AuthLayout({ children }: AuthLayoutProps) {
           Need help? Watch how to log in
         </Link>
         <span className="text-[11px] text-slate-400 font-medium">
-          © {new Date().getFullYear()} Nexa Bundles GH
+          © {new Date().getFullYear()} GF Data Hub
         </span>
       </div>
     </div>

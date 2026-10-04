@@ -79,7 +79,7 @@ export default function WithdrawPage() {
         <button
           onClick={() => setIsWithdrawOpen(true)}
           disabled={(Number(storeProfit) || 0) < 1}
-          className="w-full py-4 bg-[#feb400] hover:bg-[#e6a200] text-slate-900 font-bold tracking-wider uppercase text-xs sm:text-sm rounded-2xl shadow-md transition-all active:scale-[0.99] disabled:opacity-50 cursor-pointer"
+          className="w-full py-4 bg-[#06b6d4] hover:bg-[#0891b2] text-white font-bold tracking-wider uppercase text-xs sm:text-sm rounded-2xl shadow-md transition-all active:scale-[0.99] disabled:opacity-50 cursor-pointer"
         >
           Withdraw Profits Now
         </button>

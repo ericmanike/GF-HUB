@@ -153,7 +153,7 @@ export default function AdminAFAOrdersPage() {
 
   return (
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-3 duration-400">
-      <div className="flex flex-col gap-4 md:flex-row justify-between items-center w-full bg-gradient-to-r from-[#1e3a8a] to-[#2563eb] p-6 rounded-2xl shadow-md border border-slate-200/20 text-white">
+      <div className="flex flex-col gap-4 md:flex-row justify-between items-center w-full bg-gradient-to-r from-[#059669] to-[#06b6d4] p-6 rounded-2xl shadow-md border border-slate-200/20 text-white">
         <div>
           <h2 className="text-xl font-black text-white tracking-tight flex items-center gap-2 select-none">
             <Star className="h-5 w-5 text-amber-400 fill-amber-400 animate-pulse" />

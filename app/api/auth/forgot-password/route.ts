@@ -74,12 +74,12 @@ export async function POST(req: Request) {
         const emailResult = await resend.emails.send({
             from: process.env.RESEND_FROM_EMAIL || 'info@nyamekyeloans.com',
             to: email,
-            subject: 'Password Reset - Nexa Bundles GH',
+            subject: 'Password Reset - GF Data Hub',
             html: `
                 <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-                    <h2 style="color: #2563eb;">Password Reset Request</h2>
+                    <h2 style="color: #059669;">Password Reset Request</h2>
                     <p>Hi ${user.name},</p>
-                    <p>You requested a password reset for your NexaBundles account.</p>
+                    <p>You requested a password reset for your GF Data Hub account.</p>
                     <p>Click the button below to reset your password:</p>
                     <a href="${resetUrl}" 
                        style="display: inline-block; background-color: #2563eb; color: white; padding: 12px 24px; text-decoration: none; border-radius: 8px; margin: 16px 0;">

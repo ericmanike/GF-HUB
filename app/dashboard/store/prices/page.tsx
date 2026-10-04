@@ -162,7 +162,7 @@ export default function StorePricesPage() {
           <button
             onClick={handleSavePrices}
             disabled={loading || saving}
-            className="flex items-center justify-center gap-1.5 px-5 py-2.5 bg-[#feb400] hover:bg-[#e6a200] disabled:opacity-50 text-slate-900 rounded-xl text-xs font-extrabold transition-all shadow-md active:scale-[0.99] shrink-0 cursor-pointer"
+            className="flex items-center justify-center gap-1.5 px-5 py-2.5 bg-[#06b6d4] hover:bg-[#0891b2] disabled:opacity-50 text-white rounded-xl text-xs font-extrabold transition-all shadow-md active:scale-[0.99] shrink-0 cursor-pointer"
           >
             {saving ? (
               <Loader2 className="animate-spin h-4 w-4" />

@@ -113,7 +113,7 @@ export default function SignInPage() {
               onChange={(e) => setRememberMe(e.target.checked)}
               className="peer sr-only"
             />
-            <div className="h-4.5 w-4.5 rounded bg-white border border-slate-300 peer-checked:bg-[#1e3a8a] peer-checked:border-[#1e3a8a] flex items-center justify-center transition-all peer-focus:ring-2 peer-focus:ring-slate-300">
+            <div className="h-4.5 w-4.5 rounded bg-white border border-slate-300 peer-checked:bg-[#059669] peer-checked:border-[#059669] flex items-center justify-center transition-all peer-focus:ring-2 peer-focus:ring-slate-300">
               <Check className="h-3 w-3 text-white opacity-0 peer-checked:opacity-100 transition-opacity" strokeWidth={4} />
             </div>
             <span className="ml-2.5 text-[13px] font-medium text-slate-600 hover:text-slate-800 transition-colors">
@@ -123,20 +123,20 @@ export default function SignInPage() {
 
           <Link
             href="/auth/forgot-password"
-            className="text-[13px] font-bold text-[#fb923c] hover:text-[#f97316] transition-colors"
+            className="text-[13px] font-bold text-[#06b6d4] hover:text-[#0891b2] transition-colors"
           >
             Forgot password?
           </Link>
         </div>
 
-        {/* Yellow Submit CTA (Vibrant Gold from Screenshot) */}
+        {/* Submit CTA */}
         <button
           type="submit"
           disabled={isLoading}
-          className="relative flex w-full items-center justify-center gap-1.5 rounded-xl bg-[#fbcb08] hover:bg-[#eab308] py-3.5 px-4 text-sm font-bold text-slate-900 shadow-sm transition-all duration-200 cursor-pointer select-none active:scale-[0.99] disabled:opacity-50 disabled:pointer-events-none"
+          className="relative flex w-full items-center justify-center gap-1.5 rounded-xl bg-[#06b6d4] hover:bg-[#0891b2] py-3.5 px-4 text-sm font-bold text-white shadow-sm transition-all duration-200 cursor-pointer select-none active:scale-[0.99] disabled:opacity-50 disabled:pointer-events-none"
         >
           {isLoading ? (
-            <Loader2 className="h-5 w-5 animate-spin text-slate-900" />
+            <Loader2 className="h-5 w-5 animate-spin text-white" />
           ) : (
             <>
 
@@ -148,12 +148,12 @@ export default function SignInPage() {
         </button>
       </form>
 
-      {/* Footer Switch Page link (Orange/Amber text color matching Datamart design) */}
+      {/* Footer Switch Page link */}
       <p className="mt-6 text-center text-[13px] font-medium text-slate-500">
         Don&apos;t have an account?{" "}
         <Link
           href="/auth/signUp"
-          className="font-bold text-[#fb923c] hover:text-[#f97316] transition-colors"
+          className="font-bold text-[#06b6d4] hover:text-[#0891b2] transition-colors"
         >
           Sign Up
         </Link>

@@ -7,7 +7,7 @@ import { signOut } from "next-auth/react";
 import {
   Home,
   Wifi,
-  RadioTower,
+  GlobeCheck,
   ShoppingCart,
   Star,
   Wallet,
@@ -125,15 +125,15 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen, user }: SidebarPr
         }`}
       >
         {/* Brand Header Block (Fixed) */}
-        <div className="h-[76px] px-6 bg-[#1e3a8a] text-white  flex items-center justify-between shadow-sm shrink-0">
+        <div className="h-[76px] px-6 bg-[#059669] text-white  flex items-center justify-between shadow-sm shrink-0">
           <div className="flex items-center gap-3">
             <div className="h-10 w-10 rounded-xl bg-slate-900/10 flex items-center justify-center shadow-md">
-              <RadioTower className="h-6 w-6 text-[#fcd34d]" />
+              <GlobeCheck className="h-6 w-6 text-[#22d3ee]" />
             </div>
             
             <span className=" text-[10px] md:text-xl font-bold tracking-tight  select-none">
               <Link href="/">
-              Nexa BundlesGh
+              GF Data Hub
               </Link> 
             </span>
             
@@ -161,13 +161,13 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen, user }: SidebarPr
                 onClick={() => setSidebarOpen(false)}
                 className={`w-full flex items-center gap-3.5 px-3 py-2.5 rounded-xl transition-all duration-200 group text-left cursor-pointer ${
                   isActive
-                    ? "bg-[#1e3a8a] text-[white] border-l-2 border-[#fb923c] shadow-sm"
+                    ? "bg-[#059669] text-white border-l-2 border-[#06b6d4] shadow-sm"
                     : "text-slate-600 hover:text-slate-950 hover:bg-slate-50"
                 }`}
               >
                 <div
                   className={`h-9 w-9 rounded-xl flex items-center justify-center shrink-0 shadow-sm group-hover:scale-105 transition-transform ${
-                    isActive ? "bg-blue-600 text-white shadow-md shadow-blue-500/20" : item.color
+                    isActive ? "bg-[#047857] text-white shadow-md shadow-emerald-500/20" : item.color
                   }`}
                 >
                   <Icon size={18} />

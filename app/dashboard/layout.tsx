@@ -155,11 +155,11 @@ function DashboardLayoutContent({ children }: { children: React.ReactNode }) {
                   <div className="absolute right-0 mt-2.5 w-80 sm:w-96 bg-white border border-slate-100 rounded-2xl shadow-xl p-4 z-40 animate-in fade-in slide-in-from-top-3 duration-200">
                     <div className="flex items-center justify-between pb-3 border-b border-slate-50">
                       <h4 className="text-sm font-bold text-slate-900 flex items-center gap-1.5">
-                        <Bell size={16} className="text-[#1e3a8a]" />
+                        <Bell size={16} className="text-[#059669]" />
                         Notifications
                       </h4>
                       {notifications.length > 0 && (
-                        <span className="text-[10px] bg-blue-50 text-[#1e3a8a] px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">
+                        <span className="text-[10px] bg-emerald-50 text-[#059669] px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">
                           {notifications.length} Total
                         </span>
                       )}
@@ -205,7 +205,7 @@ function DashboardLayoutContent({ children }: { children: React.ReactNode }) {
                 onClick={() => setDropdownOpen(!dropdownOpen)}
                 className="flex items-center gap-2 hover:bg-slate-50 p-1.5 rounded-2xl transition-all cursor-pointer select-none border border-transparent hover:border-slate-100"
               >
-                <div className="relative h-10 w-10 shrink-0 rounded-full border border-slate-200 bg-[#1e3a8a] overflow-hidden shadow-inner flex items-center justify-center">
+                <div className="relative h-10 w-10 shrink-0 rounded-full border border-slate-200 bg-[#059669] overflow-hidden shadow-inner flex items-center justify-center">
                   <span className="text-xs font-black text-white uppercase">
                     {user.name ? user.name.slice(0, 2) : "US"}
                   </span>

@@ -137,7 +137,7 @@ export default function StoreSettingsPage() {
               required
               value={storeName}
               onChange={(e) => setStoreName(e.target.value)}
-              placeholder="e.g. Nexa Bundles Express"
+              placeholder="e.g. GF Data Hub Express"
               className="block w-full rounded-xl border border-slate-200 bg-slate-50 py-3 px-4 text-xs font-bold text-slate-800 placeholder-slate-400 outline-none focus:border-amber-400 focus:bg-white transition-all"
             />
           </div>
@@ -148,7 +148,7 @@ export default function StoreSettingsPage() {
               Store URL / Link Slug
             </label>
             <div className="flex bg-slate-50 border border-slate-200 rounded-xl overflow-hidden px-3.5 py-3 text-xs text-slate-500 font-mono select-none">
-              <span>nexabundlesgh.com/store/</span>
+              <span>gfdatahub.com/store/</span>
               <span className="font-bold text-slate-800">
                 {agentStore?.slug || "mystore"}
               </span>
@@ -181,7 +181,7 @@ export default function StoreSettingsPage() {
               type="text"
               value={whatsappSupport}
               onChange={(e) => setWhatsappSupport(e.target.value)}
-              placeholder="e.g. 233549961293 (include country code, no '+')"
+              placeholder="e.g. 233597542788 (include country code, no '+')"
               className="block w-full rounded-xl border border-slate-200 bg-slate-50 py-3 px-4 text-xs font-bold text-slate-800 placeholder-slate-400 outline-none focus:border-amber-400 focus:bg-white transition-all"
             />
             <p className="text-[10px] text-slate-400 font-semibold pl-1">
@@ -193,7 +193,7 @@ export default function StoreSettingsPage() {
           <button
             type="submit"
             disabled={updatingStore}
-            className="w-full py-3 bg-[#feb400] hover:bg-[#e6a200] text-slate-900 font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-md flex items-center justify-center gap-1.5 active:scale-[0.99] cursor-pointer"
+            className="w-full py-3 bg-[#06b6d4] hover:bg-[#0891b2] text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-md flex items-center justify-center gap-1.5 active:scale-[0.99] cursor-pointer"
           >
             {updatingStore ? (
               <Loader2 className="animate-spin h-4 w-4" />

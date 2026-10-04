@@ -13,14 +13,14 @@ const geistMono = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.nexabundles.com"),
+  metadataBase: new URL("https://www.gfdatahub.com"),
   title: {
-    default: "Nexa Bundles | Cheap & Affordable Data Bundles in Ghana",
-    template: "%s | Nexa Bundles",
+    default: "GF Data Hub | Cheap & Affordable Data Bundles in Ghana",
+    template: "%s | GF Data Hub",
   },
   description: "Buy cheap and affordable MTN, Telecel, and AirtelTigo data bundles in Ghana. High-speed internet bundles with instant delivery, no expiry, and active 24/7. Pay via Mobile Money.",
   keywords: [
-    "Nexa Bundles",
+    "GF Data Hub",
     "cheap data bundle ghana",
     "buy MTN data bundle",
     "cheap MTN data",
@@ -32,28 +32,28 @@ export const metadata: Metadata = {
     "non-expiry data ghana",
     "cheap internet ghana",
   ],
-  authors: [{ name: "Nexa Bundles" }],
-  creator: "Nexa Bundles",
-  publisher: "Nexa Bundles",
+  authors: [{ name: "GF Data Hub" }],
+  creator: "GF Data Hub",
+  publisher: "GF Data Hub",
   openGraph: {
     type: "website",
     locale: "en_GH",
-    url: "https://www.nexabundles.com",
-    title: "Nexa Bundles | Cheap & Affordable Data Bundles in Ghana",
+    url: "https://www.gfdatahub.com",
+    title: "GF Data Hub | Cheap & Affordable Data Bundles in Ghana",
     description: "Buy cheap and affordable MTN, Telecel, and AirtelTigo data bundles in Ghana. High-speed internet bundles with instant delivery, no expiry, and active 24/7. Pay via Mobile Money.",
-    siteName: "Nexa Bundles",
+    siteName: "GF Data Hub",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Nexa Bundles - Cheap & Affordable Data Bundles in Ghana",
+        alt: "GF Data Hub - Cheap & Affordable Data Bundles in Ghana",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nexa Bundles | Cheap & Affordable Data Bundles in Ghana",
+    title: "GF Data Hub | Cheap & Affordable Data Bundles in Ghana",
     description: "Buy cheap and affordable MTN, Telecel, and AirtelTigo data bundles in Ghana. High-speed internet bundles with instant delivery, no expiry, and active 24/7. Pay via Mobile Money.",
     images: ["/og-image.png"],
   },

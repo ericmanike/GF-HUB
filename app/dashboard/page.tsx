@@ -37,21 +37,21 @@ export default function DashboardOverviewPage() {
       )}
 
       {/* Welcome Card */}
-      <div className="relative bg-[#1e3a8a] rounded-[28px] p-6 sm:p-8 text-white overflow-hidden shadow-xl">
+      <div className="relative bg-[#059669] rounded-[28px] p-6 sm:p-8 text-white overflow-hidden shadow-xl">
         <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-white/20 blur-3xl pointer-events-none" />
         <div className="absolute left-1/3 bottom-0 h-28 w-28 rounded-full bg-white/10 blur-2xl pointer-events-none" />
 
         <div className=" w-full relative z-10 space-y-2 py-5">
        <div className="flex flex-row justify-between flex-nowrap">
           <h2 className="text-[10px] md:text-3xl font-black tracking-tight leading-tight capitalize">
-            Hello, {user.name}! <br/> <span className="text-xs sm:text-sm text-gray-200 font-semibold leading-relaxed "> It is {new Date().toLocaleTimeString()}</span>
+            Hello, {user.name}! <br/> <span className="text-xs sm:text-sm text-emerald-100 font-semibold leading-relaxed "> It is {new Date().toLocaleTimeString()}</span>
           </h2>
-          <Sparkles className=" text-[#fcd34d]  shadow-[25px_30px_60px_#ffffff] " size={30}/>
+          <Sparkles className=" text-[#22d3ee] shadow-[25px_30px_60px_#ffffff] " size={30}/>
           </div> 
-          <p className="text-[9px] sm:text-sm text-gray-200 font-semibold leading-relaxed">
+          <p className="text-[9px] sm:text-sm text-emerald-100 font-semibold leading-relaxed">
             Purchase data bundles easily, manage orders, and earn profits.
           </p>
-           <button onClick={()=> router.push('/dashboard/packages')} className="bg-[#ffffff] mt-3 w-full sm:w-auto rounded-2xl text-slate-700 cursor-pointer px-4 py-2 text-sm md:text-xl">Buy Data</button>
+           <button onClick={()=> router.push('/dashboard/packages')} className="bg-[#ffffff] mt-3 w-full sm:w-auto rounded-2xl text-slate-800 font-bold cursor-pointer px-4 py-2 text-sm md:text-xl">Buy Data</button>
         </div> 
       </div>
 
@@ -68,7 +68,7 @@ export default function DashboardOverviewPage() {
                 {formatCurrency(user.walletBalance)}
               </h3>
             </div>
-            <div className="h-10 w-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
+            <div className="h-10 w-10 rounded-xl bg-emerald-50 text-[#059669] flex items-center justify-center">
               <Wallet size={20} />
             </div>
           </div>
@@ -106,7 +106,7 @@ export default function DashboardOverviewPage() {
           </div>
           <Link
             href="/dashboard/orders"
-            className="w-full py-2.5 bg-[#fb923c] hover:bg-[#fb923a] rounded-xl text-slate-900 font-bold text-xs uppercase tracking-wider transition-all text-center flex items-center justify-center gap-1.5 shadow-sm active:scale-[0.99]"
+            className="w-full py-2.5 bg-[#06b6d4] hover:bg-[#0891b2] rounded-xl text-white font-bold text-xs uppercase tracking-wider transition-all text-center flex items-center justify-center gap-1.5 shadow-sm active:scale-[0.99]"
           >
             View All Orders <ChevronRight size={14} />
           </Link>

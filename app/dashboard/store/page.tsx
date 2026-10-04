@@ -96,7 +96,7 @@ export default function StorePage() {
               type="button"
               onClick={() => setIsWithdrawOpen(true)}
               disabled={(Number(agentStore?.totalProfit) || 0) < 1}
-              className="mt-3 w-full max-w-[150px] py-1.5 bg-[#feb400] hover:bg-[#e6a200] disabled:opacity-50 text-slate-900 font-bold text-[10px] uppercase tracking-wider rounded-xl transition-all shadow-sm active:scale-[0.99] cursor-pointer"
+              className="mt-3 w-full max-w-[150px] py-1.5 bg-[#06b6d4] hover:bg-[#0891b2] disabled:opacity-50 text-white font-bold text-[10px] uppercase tracking-wider rounded-xl transition-all shadow-sm active:scale-[0.99] cursor-pointer"
             >
               Withdraw
             </button>
@@ -107,10 +107,10 @@ export default function StorePage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
           <Link
             href="/dashboard/store/settings"
-            className="group relative flex flex-col justify-between p-6 bg-white hover:bg-slate-50/50 border border-slate-200/80 hover:border-[#feb400] rounded-2xl transition-all duration-300 shadow-sm active:scale-[0.99] select-none cursor-pointer overflow-hidden"
+            className="group relative flex flex-col justify-between p-6 bg-white hover:bg-slate-50/50 border border-slate-200/80 hover:border-[#059669] rounded-2xl transition-all duration-300 shadow-sm active:scale-[0.99] select-none cursor-pointer overflow-hidden"
           >
             <div className="space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-amber-50 group-hover:bg-[#feb400]/10 text-[#feb400] flex items-center justify-center transition-colors">
+              <div className="w-10 h-10 rounded-xl bg-emerald-50 group-hover:bg-[#059669]/10 text-[#059669] flex items-center justify-center transition-colors">
                 <Settings size={20} />
               </div>
               <div>
@@ -129,7 +129,7 @@ export default function StorePage() {
 
           <Link
             href="/dashboard/store/prices"
-            className="group relative flex flex-col justify-between p-6 bg-white hover:bg-slate-50/50 border border-slate-200/80 hover:border-[#feb400] rounded-2xl transition-all duration-300 shadow-sm active:scale-[0.99] select-none cursor-pointer overflow-hidden"
+            className="group relative flex flex-col justify-between p-6 bg-white hover:bg-slate-50/50 border border-slate-200/80 hover:border-[#059669] rounded-2xl transition-all duration-300 shadow-sm active:scale-[0.99] select-none cursor-pointer overflow-hidden"
           >
             <div className="space-y-3">
               <div className="w-10 h-10 rounded-xl bg-blue-50 group-hover:bg-blue-500/10 text-blue-500 flex items-center justify-center transition-colors">

@@ -59,7 +59,7 @@ export default function WhatsAppWidget() {
                     <div className="flex flex-col gap-2.5">
                         {/* Option 1: Direct Support Chat */}
                         <Link 
-                            href="https://wa.me/233549961293" 
+                            href="https://wa.me/233597542788" 
                             target="_blank" 
                             rel="noopener noreferrer"
                             onClick={() => setIsOpen(false)}

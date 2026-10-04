@@ -39,19 +39,19 @@ export default function RechargeModal({ isOpen, setAmount, amount, setIsOpen, ha
       <div className="relative bg-white w-full max-w-[calc(100vw-32px)] sm:max-w-sm rounded-2xl shadow-2xl overflow-hidden animate-in zoom-in-95 fade-in duration-200">
         
         {/* Header */}
-        <div className="bg-[#feb400] text-slate-900 p-4 flex justify-between items-center">
+        <div className="bg-[#059669] text-white p-4 flex justify-between items-center">
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-full bg-slate-900/10 flex items-center justify-center text-slate-900">
+            <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white">
               <Wallet size={16} />
             </div>
             <div>
-              <h2 className="text-base font-bold text-slate-900 leading-tight">Top Up Wallet</h2>
-              <p className="text-[11px] text-slate-800 font-semibold leading-tight">Add funds to your account</p>
+              <h2 className="text-base font-bold text-white leading-tight">Top Up Wallet</h2>
+              <p className="text-[11px] text-emerald-100 font-semibold leading-tight">Add funds to your account</p>
             </div>
           </div>
           <button 
             onClick={() => setIsOpen(false)} 
-            className="w-7 h-7 rounded-full bg-slate-900/10 flex items-center justify-center text-slate-900 hover:bg-slate-900/20 transition-colors cursor-pointer"
+            className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center text-white hover:bg-white/30 transition-colors cursor-pointer"
           >
             <X size={16} />
           </button>
@@ -130,7 +130,7 @@ export default function RechargeModal({ isOpen, setAmount, amount, setIsOpen, ha
                 ) : null}
 
                 <button
-                    className="w-full py-3 rounded-xl bg-[#1e3a8a] text-white text-[13px] font-black hover:bg-[#0b173a] transition-all flex items-center justify-center gap-2 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer shadow-sm"
+                    className="w-full py-3 rounded-xl bg-[#059669] text-white text-[13px] font-black hover:bg-[#047857] transition-all flex items-center justify-center gap-2 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer shadow-sm"
                     onClick={handleTopUp}
                     disabled={!amount || amount < 10}
                 >
@@ -181,7 +181,7 @@ export default function RechargeModal({ isOpen, setAmount, amount, setIsOpen, ha
                 </p>
 
                 <button
-                    className="w-full py-3 rounded-xl bg-[#1e3a8a] text-white text-[13px] font-black hover:bg-[#0b173a] transition-all active:scale-[0.98] cursor-pointer shadow-sm"
+                    className="w-full py-3 rounded-xl bg-[#059669] text-white text-[13px] font-black hover:bg-[#047857] transition-all active:scale-[0.98] cursor-pointer shadow-sm"
                     onClick={() => setIsOpen(false)}
                 >
                     I have sent the money

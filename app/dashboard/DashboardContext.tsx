@@ -124,13 +124,13 @@ export function DashboardProvider({ children }: { children: React.ReactNode }) {
       }
     ],
     agentStore: {
-      storeName: "Nexa Bundles Express",
+      storeName: "GF Data Hub Express",
       description: "Get the cheapest internet data bundles in seconds.",
-      slug: "nexabundlesexpress",
+      slug: "gfdatahubexpress",
       isActive: true,
       totalSalesCount: 15,
       totalProfit: 72.5,
-      whatsappSupport: "233549961293"
+      whatsappSupport: "233597542788"
     }
   });
 

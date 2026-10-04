@@ -13,7 +13,7 @@ export default function ReferralsPage() {
   const { user } = data;
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(`https://nexabundlesgh.com/auth/signUp?ref=${user.id}`);
+    navigator.clipboard.writeText(`https://gfdatahub.com/auth/signUp?ref=${user.id}`);
     setCopiedText(true);
     setTimeout(() => setCopiedText(false), 2000);
   };
@@ -55,12 +55,12 @@ export default function ReferralsPage() {
             <input
               type="text"
               readOnly
-              value={`https://nexabundles.com/auth/signUp?ref=${user.id}`}  
+              value={`https://gfdatahub.com/auth/signUp?ref=${user.id}`}  
               className="bg-transparent border-none flex-1 outline-none text-xs text-slate-600 px-2 font-mono"
             />
             <button
               onClick={handleCopy}
-              className="px-4 py-2 bg-[#fb923c] hover:bg-[#f77c28] text-slate-900 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 active:scale-[0.99] cursor-pointer shadow-sm"
+              className="px-4 py-2 bg-[#06b6d4] hover:bg-[#0891b2] text-white rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 active:scale-[0.99] cursor-pointer shadow-sm"
             >
               {copiedText ? (
                 <>

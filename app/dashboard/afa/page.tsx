@@ -160,8 +160,8 @@ export default function AFAOrdersPage() {
       {/* Centered Registration Card (matching image) */}
       <div className="bg-white rounded-[10px] overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
         
-        {/* Card Premium Violet/Indigo Header (matching image) */}
-        <div className="bg-[#fb923c] py-6 px-6 sm:px-8 text-center text-white flex flex-col items-center justify-center gap-1.5 shadow-inner">
+        {/* Card Premium Header */}
+        <div className="bg-[#059669] py-6 px-6 sm:px-8 text-center text-white flex flex-col items-center justify-center gap-1.5 shadow-inner">
           <div className="bg-white/10 p-2 rounded-2xl flex items-center justify-center shrink-0">
             <Smartphone className="h-6 w-6 text-white shrink-0" />
           </div>

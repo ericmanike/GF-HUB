@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { RadioTower, Menu, X } from "lucide-react";
+import { GlobeCheck, Menu, X } from "lucide-react";
 import { signOut } from "next-auth/react";
 
 export default function Home() {
@@ -12,12 +12,12 @@ export default function Home() {
       {/* 1. Global Brand Header with Glassmorphism */}
       <header className="sticky top-0 z-50 flex h-16 w-full items-center justify-between border-b border-slate-100 bg-white/85 backdrop-blur-md px-4 shadow-sm sm:px-6 md:px-10 lg:px-16">
         <Link href="/" className="inline-flex items-center gap-2 group">
-          <div className="h-8 w-8 rounded-lg bg-[#1e3a8a] flex items-center justify-center shadow-md shadow-red-500/20 group-hover:scale-105 transition-transform">
-            <RadioTower className="h-5 w-5 text-white" />
+          <div className="h-8 w-8 rounded-lg bg-[#059669] flex items-center justify-center shadow-md shadow-emerald-500/20 group-hover:scale-105 transition-transform">
+            <GlobeCheck className="h-5 w-5 text-white" />
           </div>
           <span className="text-[17px] font-black tracking-widest flex items-baseline gap-1 group-hover:opacity-90 transition-opacity">
-            <span className="text-[#1e3a8a]">Nexa</span>
-            <span className="text-[#fb923c]">Bundles</span> 
+            <span className="text-[#059669]">GF Data</span>
+            <span className="text-[#06b6d4]">Hub</span> 
 
           </span>
         </Link>
@@ -33,7 +33,7 @@ export default function Home() {
           </Link>
           <Link
             href="/auth/signIn"
-            className="rounded-xl bg-[#fdc700] hover:bg-[#a98700] px-5 py-2.5 text-xs font-black text-black tracking-wider uppercase shadow-md shadow-red-600/10 transition-all active:scale-[0.98]"
+            className="rounded-xl bg-[#06b6d4] hover:bg-[#0891b2] px-5 py-2.5 text-xs font-black text-white tracking-wider uppercase shadow-md shadow-cyan-600/10 transition-all active:scale-[0.98]"
           >
             Buy Now
           </Link>
@@ -68,7 +68,7 @@ export default function Home() {
             <Link
               href="/buy"
               onClick={() => setMenuOpen(false)}
-              className="text-center rounded-xl bg-[#fdc700] hover:bg-[#a98700] py-3 text-xs font-black text-black tracking-wider uppercase shadow-md shadow-amber-400/10 transition-all active:scale-[0.98]"
+              className="text-center rounded-xl bg-[#06b6d4] hover:bg-[#0891b2] py-3 text-xs font-black text-white tracking-wider uppercase shadow-md shadow-cyan-400/10 transition-all active:scale-[0.98]"
             >
               Buy Now
             </Link>
@@ -106,7 +106,7 @@ export default function Home() {
                   Choose A 
                 </span>
                 <div className="flex items-center gap-3">
-                  <span className="w-1.5 h-7.5 bg-[#df0000] rounded-full shrink-0" />
+                  <span className="w-1.5 h-7.5 bg-[#059669] rounded-full shrink-0" />
                   <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight leading-none">
                     Network 
                   </h2>
@@ -115,7 +115,7 @@ export default function Home() {
 
               <Link
                 href="/auth/signIn"
-                className="text-[#df0000] font-black tracking-wider uppercase text-xs sm:text-sm hover:underline flex items-center gap-1 group pb-0.5"
+                className="text-[#059669] font-black tracking-wider uppercase text-xs sm:text-sm hover:underline flex items-center gap-1 group pb-0.5"
               >
                 See More{" "}
                 <span className="group-hover:translate-x-1 transition-transform inline-block font-sans text-base leading-none">
@@ -132,9 +132,9 @@ export default function Home() {
               <div className="relative bg-[#0066b3] rounded-[28px] pt-6 pb-7 px-3 flex flex-col items-center justify-between shadow-[0_20px_45px_rgba(0,102,179,0.18)] hover:-translate-y-2.5 transition-all duration-300 group cursor-pointer h-[250px]">
                
               
-                {/* Circular RadioTower Badge */}
+                {/* Circular GlobeCheck Badge */}
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#005596] shadow-inner mt-2">
-                  <RadioTower className="h-6 w-6 text-white/90" />
+                  <GlobeCheck className="h-6 w-6 text-white/90" />
                 </div>
 
                 {/* Details */}
@@ -164,9 +164,9 @@ export default function Home() {
             
              
 
-                {/* Circular RadioTower Badge */}
+                {/* Circular GlobeCheck Badge */}
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#e6b800] shadow-inner mt-2">
-                  <RadioTower className="h-6 w-6 text-slate-900" />
+                  <GlobeCheck className="h-6 w-6 text-slate-900" />
                 </div>
 
                 {/* Details */}
@@ -193,9 +193,9 @@ export default function Home() {
               <div className="relative bg-[#df0000] rounded-[28px] pt-6 pb-7 px-6 flex flex-col items-center justify-between shadow-[0_20px_45px_rgba(223,0,0,0.18)] hover:-translate-y-2.5 transition-all duration-300 group cursor-pointer h-[250px]">
                
 
-                {/* Circular RadioTower Badge */}
+                {/* Circular GlobeCheck Badge */}
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#be0000] shadow-inner mt-2">
-                  <RadioTower className="h-6 w-6 text-white/90" />
+                  <GlobeCheck className="h-6 w-6 text-white/90" />
                 </div>
 
                 {/* Details */}
@@ -219,19 +219,19 @@ export default function Home() {
             </div>
 
             {/* Agent Call to Action Banner (With requested text-gradient styling) */}
-            <div className="bg-[#1e3a8a] rounded-[24px] p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-[0_12px_35px_rgba(17,24,39,0.15)] hover:scale-[1.005] transition-all duration-300 border border-slate-800">
+            <div className="bg-[#059669] rounded-[24px] p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-[0_12px_35px_rgba(5,150,105,0.2)] hover:scale-[1.005] transition-all duration-300 border border-emerald-700">
               <div className="text-center md:text-left">
                 <h3 className="text-2xl font-black text-white  tracking-tight mb-1.5">
                   Ready to earn extra cash?
                 </h3>
-                <p className="text-[14px] font-semibold text-slate-400">
+                <p className="text-[14px] font-semibold text-emerald-100">
                   Start your own data business today. Become an agent for free!
                 </p>
               </div>
 
               <Link
                 href="/auth/signUp"
-                className="w-full md:w-auto shrink-0 bg-gradient-to-r from-red-600 via-orange-500 to-amber-500 hover:opacity-95 text-white font-black tracking-wide uppercase text-xs sm:text-sm px-6 py-4 rounded-xl shadow-md transition-all active:scale-[0.98] flex items-center justify-center gap-2 group"
+                className="w-full md:w-auto shrink-0 bg-gradient-to-r from-teal-400 via-cyan-400 to-emerald-300 hover:opacity-95 text-slate-950 font-black tracking-wide uppercase text-xs sm:text-sm px-6 py-4 rounded-xl shadow-md transition-all active:scale-[0.98] flex items-center justify-center gap-2 group"
               >
                 Become an Agent{" "}
                 <span className="group-hover:translate-x-0.5 transition-transform inline-block text-base leading-none">
@@ -257,7 +257,7 @@ export default function Home() {
               href="https://whatsapp.com/channel/0029VbCQ91f6LwHoZ9KDuc0U"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-xl bg-[#1e3a8a] hover:bg-[#172554] px-8 py-3.5 text-xs font-black text-white tracking-widest uppercase shadow-md shadow-blue-900/10 transition-all active:scale-[0.98] select-none"
+              className="inline-flex items-center justify-center rounded-xl bg-[#059669] hover:bg-[#047857] px-8 py-3.5 text-xs font-black text-white tracking-widest uppercase shadow-md shadow-emerald-900/10 transition-all active:scale-[0.98] select-none"
             >
               Join Whatsapp Channel
             </Link>
@@ -266,16 +266,15 @@ export default function Home() {
       </main>
 
       {/* 5. Sleek Dark Footer */}
-      <footer className="w-full bg-[#111827] text-slate-400 py-12 px-4 sm:px-6 md:px-10 lg:px-16 border-t border-slate-800">
+      <footer className="w-full bg-[#064e3b] text-emerald-100 py-12 px-4 sm:px-6 md:px-10 lg:px-16 border-t border-emerald-800">
         <div className="mx-auto w-full max-w-6xl flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-2">
-            <div className="h-6 w-6 rounded-md bg-red-600 flex items-center justify-center shadow-md">
-              <span className="text-white text-[10px] font-black">N</span>
+            <div className="h-6 w-6 rounded-md bg-[#06b6d4] flex items-center justify-center shadow-md">
+              <span className="text-slate-950 text-[10px] font-black">G</span>
             </div>
             <span className="text-[15px] font-black text-white tracking-widest flex items-baseline gap-1">
-              <span className="text-white">Nexa</span>
-              <span className="text-[#fb923c]">Bundles</span> 
-              <span className="text-slate-500 text-[9px] font-semibold">GH</span>
+              <span className="text-white">GF Data</span>
+              <span className="text-[#06b6d4]">Hub</span> 
             </span>
           </div>
 
@@ -292,8 +291,8 @@ export default function Home() {
             </Link>
           </div>
 
-          <p className="text-[11px] font-semibold text-slate-500">
-            &copy; {new Date().getFullYear()} Nexa Bundles GH. All rights reserved.
+          <p className="text-[11px] font-semibold text-emerald-200/70">
+            &copy; {new Date().getFullYear()} GF Data Hub. All rights reserved.
           </p>
         </div>
       </footer>

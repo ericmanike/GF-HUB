@@ -217,7 +217,7 @@ export default function BuyPage() {
         <Link href="/" className="inline-flex items-center gap-1.5 group">
           <ChevronLeft className="h-4.5 w-4.5 text-slate-600 group-hover:-translate-x-0.5 transition-transform" strokeWidth={2.5} />
           <span className="text-[17px] font-black tracking-widest flex items-baseline gap-1 group-hover:opacity-90 transition-opacity">
-            <span className="text-[#1e3a8a]">Back</span>
+            <span className="text-[#059669]">Back</span>
           </span>
         </Link>
 
@@ -226,7 +226,7 @@ export default function BuyPage() {
           
           <Link
             href="/auth/signUp"
-            className="rounded-lg bg-[#fbcb08] hover:bg-[#eab308] px-4 py-2 text-xs font-bold text-slate-900 shadow-sm transition-all active:scale-[0.98]"
+            className="rounded-lg bg-[#06b6d4] hover:bg-[#0891b2] px-4 py-2 text-xs font-bold text-white shadow-sm transition-all active:scale-[0.98]"
           >
             Sign Up
           </Link>
@@ -268,10 +268,10 @@ export default function BuyPage() {
           </div>
 
           {/* Purple Banner: Interactive Toggleable Track Order Card */}
-          <div className="overflow-hidden rounded-2xl border border-slate-200 bg-[#1e3a8a] text-white shadow-md">
+          <div className="overflow-hidden rounded-2xl border border-emerald-800 bg-[#059669] text-white shadow-md">
             <button
               onClick={() => setShowTracker(!showTracker)}
-              className="flex w-full items-center justify-between p-4 text-left cursor-pointer transition-colors hover:bg-[#2145a8]"
+              className="flex w-full items-center justify-between p-4 text-left cursor-pointer transition-colors hover:bg-[#047857]"
             >
               <div className="flex gap-3.5">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/10 text-white">
@@ -281,13 +281,13 @@ export default function BuyPage() {
                   <span className="text-[14px] font-bold block">
                     Track Your Order
                   </span>
-                  <span className="text-xs text-indigo-100 font-medium">
+                  <span className="text-xs text-emerald-100 font-medium">
                     Check delivery status by phone number 
                   </span>
                 </div>
               </div>
               <ChevronDown
-                className={`h-4.5 w-4.5 text-indigo-200 transition-transform duration-250 ${
+                className={`h-4.5 w-4.5 text-emerald-200 transition-transform duration-250 ${
                   showTracker ? "rotate-180" : ""
                 }`}
                 strokeWidth={2.5}
@@ -296,7 +296,7 @@ export default function BuyPage() {
 
             {/* Expanded tracking console */}
             {showTracker && (
-              <div className="border-t border-indigo-500 bg-[#3158c4] p-5 space-y-4 animate-in slide-in-from-top duration-200">
+              <div className="border-t border-emerald-500 bg-[#047857] p-5 space-y-4 animate-in slide-in-from-top duration-200">
                 <form onSubmit={handleTrackSearch} className="flex gap-2.5">
                   <input
                     type="text"
@@ -304,12 +304,12 @@ export default function BuyPage() {
                     value={trackingCode}
                     onChange={(e) => setTrackingCode(e.target.value)}
                     placeholder="Enter phone number"
-                    className="block flex-1 rounded-xl border border-[orange] bg-white/30 px-4 py-3 text-1xl text-slate-900 placeholder-slate-900  placeholder-text-1xl outline-none focus:ring-2 focus:ring-[orange] focus:border-[orange]"
+                    className="block flex-1 rounded-xl border border-[#06b6d4] bg-white/30 px-4 py-3 text-1xl text-slate-900 placeholder-slate-900  placeholder-text-1xl outline-none focus:ring-2 focus:ring-[#06b6d4] focus:border-[#06b6d4]"
                   />
                   <button
                     type="submit"
                     disabled={isSearching}
-                    className="rounded-xl bg-white px-5 py-3 text-xs font-bold text-indigo-900 shadow hover:bg-slate-50 transition-colors disabled:opacity-50"
+                    className="rounded-xl bg-white px-5 py-3 text-xs font-bold text-emerald-900 shadow hover:bg-slate-50 transition-colors disabled:opacity-50"
                   >
                     {isSearching ? "Searching..." : "Track"}
                   </button>
@@ -317,14 +317,14 @@ export default function BuyPage() {
 
                 {/* Tracker outputs */}
                 {trackingResult && (
-                  <div className="rounded-xl bg-[#1e3a8a] p-4 border border-slate-700 text-xs font-medium leading-relaxed animate-in fade-in duration-300">
+                  <div className="rounded-xl bg-[#064e3b] p-4 border border-emerald-700 text-xs font-medium leading-relaxed animate-in fade-in duration-300">
                     {typeof trackingResult === "string" ? (
-                      <p className="text-slate-300">{trackingResult}</p>
+                      <p className="text-emerald-100">{trackingResult}</p>
                     ) : trackingResult.length === 0 ? (
-                      <p className="text-slate-300">No orders found for this phone number.</p>
+                      <p className="text-emerald-100">No orders found for this phone number.</p>
                     ) : (
                       <div className="space-y-3">
-                        <p className="font-bold text-slate-200 border-b bg-[#1e3a8a] pb-1.5 mb-2">
+                        <p className="font-bold text-emerald-100 border-b border-emerald-700 bg-[#064e3b] pb-1.5 mb-2">
                           Recent Orders Found ({trackingResult.length})
                         </p>
                         <div className="divide-y divide-slate-700 max-h-[280px] overflow-y-auto pr-1 space-y-3">
