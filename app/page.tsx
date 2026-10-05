@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { GlobeCheck, Menu, X, ArrowRight, Zap } from "lucide-react";
+import { GlobeCheck, Menu, X, ArrowRight, Zap, Wifi } from "lucide-react";
 import { signOut } from "next-auth/react";
 
 export default function Home() {
@@ -168,16 +168,14 @@ export default function Home() {
              
               {/* Card 1: AirtelTigo */}
               <Link href={'/auth/signIn'}>
-              <div className="relative bg-[#0066b3] rounded-[28px] pt-6 pb-7 px-3 flex flex-col items-center justify-between shadow-[0_20px_45px_rgba(0,102,179,0.18)] hover:-translate-y-2.5 transition-all duration-300 group cursor-pointer h-[250px]">
-               
-              
-                {/* Circular GlobeCheck Badge */}
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#005596] shadow-inner mt-2">
-                  <GlobeCheck className="h-6 w-6 text-white/90" />
+              <div className="relative bg-[#0066b3] rounded-[28px] py-8 px-3 flex flex-col items-center justify-center shadow-[0_20px_45px_rgba(0,102,179,0.18)] hover:-translate-y-2.5 transition-all duration-300 group cursor-pointer">
+                {/* Circular Wifi Badge */}
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#005596] shadow-inner">
+                  <Wifi className="h-6 w-6 text-white/90" />
                 </div>
 
                 {/* Details */}
-                <div className="text-center mt-3 mb-5">
+                <div className="text-center mt-3">
                   <h3 className="text-4.5xl font-black text-white tracking-tight leading-none">
                     AIRTELTIGO
                   </h3>
@@ -185,31 +183,19 @@ export default function Home() {
                     Non-Expiry Data
                   </span>
                 </div>
-
-                {/* Price Pill Button */}
-               
-                <div className="w-full bg-white rounded-2xl py-2 shadow-md flex items-center justify-center transition-all duration-200 group-hover:scale-[1.02]">
-                  <span className="text-[17px] font-black text-slate-900 tracking-tight">
-                    BUY NOW
-                  </span>
-                </div>
-              
               </div>
-                </Link>
+              </Link>
 
               {/* Card 2: MTN */}
               <Link href={'/auth/signIn'}>
-              <div className="relative bg-[#ffcc00] rounded-[28px] pt-6 pb-7 px-3 flex flex-col items-center justify-between shadow-[0_20px_45px_rgba(255,204,0,0.15)] hover:-translate-y-2.5 transition-all duration-300 group cursor-pointer h-[250px]">
-            
-             
-
-                {/* Circular GlobeCheck Badge */}
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#e6b800] shadow-inner mt-2">
-                  <GlobeCheck className="h-6 w-6 text-slate-900" />
+              <div className="relative bg-[#ffcc00] rounded-[28px] py-8 px-3 flex flex-col items-center justify-center shadow-[0_20px_45px_rgba(255,204,0,0.15)] hover:-translate-y-2.5 transition-all duration-300 group cursor-pointer">
+                {/* Circular Wifi Badge */}
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#e6b800] shadow-inner">
+                  <Wifi className="h-6 w-6 text-slate-900" />
                 </div>
 
                 {/* Details */}
-                <div className="text-center mt-3 mb-5">
+                <div className="text-center mt-3">
                   <h3 className="text-4.5xl font-black text-slate-900 tracking-tight leading-none">
                     MTN
                   </h3>
@@ -217,40 +203,24 @@ export default function Home() {
                     Non-Expiry Data
                   </span>
                 </div>
-
-                {/* Price Pill Button */}
-                <div className="w-full bg-white rounded-2xl py-2 shadow-md flex items-center justify-center transition-all duration-200 group-hover:scale-[1.02]">
-                  <span className="text-[17px] font-black text-slate-900 tracking-tight">
-                   BUY NOW
-                  </span>
-                </div>
               </div>
               </Link>
 
               {/* Card 3: Telecel */}
               <Link href={"/auth/signIn"}>
-              <div className="relative bg-[#df0000] rounded-[28px] pt-6 pb-7 px-6 flex flex-col items-center justify-between shadow-[0_20px_45px_rgba(223,0,0,0.18)] hover:-translate-y-2.5 transition-all duration-300 group cursor-pointer h-[250px]">
-               
-
-                {/* Circular GlobeCheck Badge */}
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#be0000] shadow-inner mt-2">
-                  <GlobeCheck className="h-6 w-6 text-white/90" />
+              <div className="relative bg-[#df0000] rounded-[28px] py-8 px-6 flex flex-col items-center justify-center shadow-[0_20px_45px_rgba(223,0,0,0.18)] hover:-translate-y-2.5 transition-all duration-300 group cursor-pointer">
+                {/* Circular Wifi Badge */}
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#be0000] shadow-inner">
+                  <Wifi className="h-6 w-6 text-white/90" />
                 </div>
 
                 {/* Details */}
-                <div className="text-center mt-3 mb-5">
+                <div className="text-center mt-3">
                   <h3 className="text-4.5xl font-black text-white tracking-tight leading-none">
                     TELECEL
                   </h3>
                   <span className="text-[10px] font-black text-white/70 block uppercase tracking-[0.18em] mt-2 select-none">
                     Non-Expiry Data
-                  </span>
-                </div>
-
-                {/* Price Pill Button */}
-                <div className="w-full bg-white rounded-2xl py-2 shadow-md flex items-center justify-center transition-all duration-200 group-hover:scale-[1.02]">
-                  <span className="text-[17px] font-black text-slate-900 tracking-tight">
-                    BUY NOW
                   </span>
                 </div>
               </div>
