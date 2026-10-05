@@ -2,7 +2,8 @@
 
 import React from "react";
 import Link from "next/link";
-import { GlobeCheck, Menu, X } from "lucide-react";
+import Image from "next/image";
+import { GlobeCheck, Menu, X, ArrowRight, Zap } from "lucide-react";
 import { signOut } from "next-auth/react";
 
 export default function Home() {
@@ -78,19 +79,57 @@ export default function Home() {
 
       {/* 2. Hero Presentation Layer */}
       <main className="flex-1 flex flex-col">
-        {/* Hero Section */}
-        <section className="mx-auto w-full max-w-6xl px-4 pt-12 pb-8 sm:px-6 md:pt-16 md:pb-12 text-center">
-    
-          <h1 className=" text-2xl md:text-4xl  font-black text-slate-950 tracking-tight max-w-4xl mx-auto leading-[1.08] mb-6">
-          
-            <span className="text-black">
+        {/* Hero Section with public/hero.jpg taking full width */}
+        <section className="relative w-full overflow-hidden min-h-[420px] sm:min-h-[480px] md:min-h-[540px] flex items-center justify-center text-center group">
+          {/* Hero Image Background */}
+          <Image
+            src="/hero.jpg"
+            alt="GF Data Hub Hero"
+            fill
+            priority
+            className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+          />
+
+          {/* Gradient Overlay for contrast */}
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/50 to-slate-900/30" />
+          <div className="absolute inset-0 bg-emerald-950/20 backdrop-blur-[1px]" />
+
+          {/* Hero Overlay Content */}
+          <div className="relative z-10 max-w-4xl px-4 sm:px-6 py-16 flex flex-col items-center">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-emerald-300 text-xs sm:text-sm font-bold uppercase tracking-wider mb-6 shadow-lg">
+
+              <span>Grace Fosu Data Hub</span>
+            </div>
+
+            {/* Title */}
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.08] mb-5 drop-shadow-md">
               Affordable Data Bundle
-            </span>
-          </h1>
-          <p className="text-[11px] sm:text-base font-semibold text-slate-500 max-w-2xl mx-auto leading-relaxed mb-4">
-   Buy Affordable Data Bundle on MTN and AirtelTigo (AT) • Doesn't work for Turbonet SIM
-          </p>
-     
+            </h1> 
+
+            {/* Subtitle */}
+            <p className="text-sm sm:text-lg font-medium text-slate-200 max-w-2xl mx-auto leading-relaxed mb-8 drop-shadow-sm">
+              Buy Affordable Data Bundle on MTN and AirtelTigo (AT) • Fast & Reliable • Non-Expiry
+            </p>
+
+            {/* Overlay Action Buttons */}
+            <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+              <Link
+                href="/auth/signIn"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-2xl bg-[#06b6d4] hover:bg-[#0891b2] text-white text-xs sm:text-sm font-black uppercase tracking-wider px-8 py-4 shadow-xl shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 group/btn"
+              >
+                <span>Buy Data Now</span>
+                <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+              </Link>
+
+              <Link
+                href="/auth/signUp"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-2xl bg-white/15 hover:bg-white/25 text-white backdrop-blur-md border border-white/30 text-xs sm:text-sm font-black uppercase tracking-wider px-7 py-4 shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
+              >
+                Become an Agent
+              </Link>
+            </div>
+          </div>
         </section>
 
         {/* 3. SHOWCASE SECTION (Replicated from user's screenshot) */}
@@ -254,12 +293,12 @@ export default function Home() {
               Have questions or need assistance? We&apos;re here to help!
             </p>
             <Link
-              href="https://whatsapp.com/channel/0029VbCQ91f6LwHoZ9KDuc0U"
+              href="https://wa.me/233597542788"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-xl bg-[#059669] hover:bg-[#047857] px-8 py-3.5 text-xs font-black text-white tracking-widest uppercase shadow-md shadow-emerald-900/10 transition-all active:scale-[0.98] select-none"
             >
-              Join Whatsapp Channel
+              Contact Support on WhatsApp
             </Link>
           </div>
         </section>

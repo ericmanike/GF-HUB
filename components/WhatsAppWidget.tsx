@@ -74,9 +74,9 @@ export default function WhatsAppWidget() {
                             </div>
                         </Link>
 
-                        {/* Option 2: Join WhatsApp Group/Channel */}
+                        {/* Option 2: WhatsApp Support */}
                         <Link 
-                            href="https://whatsapp.com/channel/0029VbCQ91f6LwHoZ9KDuc0U" 
+                            href="https://wa.me/233597542788" 
                             target="_blank" 
                             rel="noopener noreferrer"
                             onClick={() => setIsOpen(false)}
@@ -86,8 +86,8 @@ export default function WhatsAppWidget() {
                                 <FaUsers className="h-5 w-5" />
                             </div>
                             <div className="flex flex-col">
-                                <span className="text-sm font-semibold leading-tight text-emerald-950">Join WhatsApp Channel</span>
-                                <span className="text-[11px] text-emerald-700 leading-tight">Get latest updates & deals</span>
+                                <span className="text-sm font-semibold leading-tight text-emerald-950">WhatsApp Customer Care</span>
+                                <span className="text-[11px] text-emerald-700 leading-tight">Get fast assistance & updates</span>
                             </div>
                         </Link>
                     </div>
