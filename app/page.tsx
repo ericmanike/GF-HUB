@@ -115,7 +115,7 @@ export default function Home() {
             {/* Overlay Action Buttons */}
             <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
               <Link
-                href="/auth/signIn"
+                href="/buy"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-2xl bg-[#06b6d4] hover:bg-[#0891b2] text-white text-xs sm:text-sm font-black uppercase tracking-wider px-8 py-4 shadow-xl shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 group/btn"
               >
                 <span>Buy Data Now</span>
